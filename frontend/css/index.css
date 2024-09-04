@@ -1,0 +1,452 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+    min-height: 100vh;
+    background-color: antiquewhite;
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+/* ====================================================== */
+
+nav {
+    background-color: maroon;
+    padding: 10px 3%;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    color: white;
+    font-size: 2rem;
+    margin: 0 0px;
+}
+
+.logo {
+    width: 400px;
+}
+
+.option_container {
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    gap: 50px;
+}
+
+.option,
+.option2 {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border: none;
+    background-color: inherit;
+    transition: .3s ease;
+    cursor: pointer;
+    
+}
+
+.option:hover,
+.option2:hover {
+    color: black;
+    transition: .1s ease;
+}
+
+.option.active,
+.option2.active {
+    color: white;
+    font-weight: 700;
+    border-bottom: 3px solid white;
+    transition: .2s ease;
+}
+
+.user-greeting {
+    font-size: 1.5rem;
+    margin-left: auto;
+    width: 400px;
+    display: flex;
+    justify-content: flex-end;
+}
+.user-greeting-side {
+    font-size: 2rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.hideOnMobile {
+    display: flex; /* Shown on larger screens */
+}
+
+.menu_button {
+    display: none; /* Hidden on larger screens */
+    cursor: pointer;
+}
+
+/* Sidebar Styles for Mobile */
+.sidebar {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: maroon;
+    z-index: 1000;
+    padding: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.option_container2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar li {
+    margin: 15px 0;
+}
+
+.sidebar li a {
+    color: #e8eaed;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.close_menu_button {
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+
+
+/* ======================================================= */
+
+.content_container {
+    display: flex;
+}
+
+.right_container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 70px 3%;
+    width: 100vw;
+    background-color: antiquewhite;
+}
+
+#order, 
+#shipment,
+#payment {
+    display: none;
+}
+
+
+.content_section h1{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.display_button button {
+    border: none;
+    background-color: inherit;
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-weight: 500;
+    height: 25px;
+}
+.display_button button:hover {
+    border-bottom: 1.5px solid maroon;
+    transition: .1s;
+}
+.display_button button.active {
+    border-bottom: 3px solid maroon;
+    font-weight: 600;
+    transition: .1s;
+}
+.display_button {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.input_form h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.input_form label {
+    font-size: 1.3rem;
+    margin-bottom: 50px;
+}
+.input_form input {
+    margin-bottom: 10px;
+    height: 40px;
+    width: 250px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 10px;
+    font-size: 1rem;
+}
+#cust_id_button,
+#order_id_button,
+#shipment_id_button,
+#trx_order_id_button,
+#trx_shipment_id_button,
+#trx_others_id_button {
+    margin-bottom: 0px;
+    height: 30px;
+    width: 250px;
+    border: none;
+    font-size: 0.9rem;
+    text-align: left;
+    cursor: pointer;
+    padding-left: 10px;
+    background-color: wheat;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: maroon;
+    font-weight: 700;
+}
+#cust_id,
+#order_id,
+#trx_order_id,
+#trx_shipment_id,
+#trx_others_id {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+#shipment_id {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+.submit_btn {
+    cursor: pointer;
+    background-color: maroon;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    height: 40px;
+    width: 250px;
+    border: none;
+    border-radius: 5px;
+}
+.submit_btn:hover {
+    background-color: wheat;
+    border: 1px solid maroon;
+    color: black;
+    transition: .2s;
+}
+#order_date,
+#shipment_date,
+#payment_date {
+    margin-top: 5px;
+}
+#type1,
+#shipment_method, 
+#order_payment_in,
+#shipment_payment_in,
+#others_payment_in,
+#payment_type {
+    margin-bottom: 10px;
+    height: 40px;
+    width: 250px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 5px;
+    font-size: 1rem;
+}
+
+.input_form {
+    display: none;
+}
+
+#order_id_input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+#order_id_input label {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+#order_id_input input {
+    margin-bottom: 10px;
+    height: 40px;
+    width: 250px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 10px;
+    font-size: 1rem;
+}
+#order_id_input button {
+    cursor: pointer;
+    background-color: maroon;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    height: 40px;
+    width: 250px;
+    border: none;
+    border-radius: 5px;
+}
+#order_id_input button:hover {
+    background-color: wheat;
+    border: 1px solid maroon;
+    color: black;
+    transition: .2s;
+}
+
+fieldset h2 {
+    margin: 20px 0;
+    font-size: 1.8rem;
+}
+fieldset label {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+fieldset input {
+    height: 40px;
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 10px;
+    font-size: 1rem;
+}
+fieldset button,
+.submit_btn_msform {
+    cursor: pointer;
+    background-color: maroon;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    height: 40px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+}
+fieldset button:hover,
+.submit_btn_msform:hover {
+    background-color: wheat;
+    border: 1px solid maroon;
+    color: black;
+    transition: .2s;
+}
+
+.file-input-container {
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding: 0 ;
+    position: relative;
+    width: 300px;
+    height: 50px;
+    font-size: 1rem;
+}
+.file-input-container input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+.file-input-container label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+  
+.btns {
+    cursor: pointer;
+    background-color: maroon;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    height: 40px;
+    width: 250px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.btns:hover {
+    background-color: wheat;
+    border: 1px solid maroon;
+    color: black;
+    transition: .1s ease;
+}
+
+/* ======================================================================================= */
+/* RESPONSIVE */
+
+@media (max-width: 1200px) {
+    html{
+        font-size: 90%;
+    }
+}
+@media (max-width: 1100px) {
+    .hideOnMobile {
+        display: none; /* Hidden on smaller screens */
+    }
+    .menu_button {
+        display: flex; /* Shown on smaller screens */
+        align-items: center;
+    }
+}
+
+@media (max-width: 900px) {
+    html{
+        font-size: 85%;
+    }
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .logo {
+        width: 800px;
+    }
+
+    .shipment_option_button {
+        display: flex;
+        flex-direction: column;
+    }
+}

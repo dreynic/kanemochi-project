@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+    min-height: 100vh;
+    background-color: wheat;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ====================================================== */
+
+.reg_section {
+    height: 425px;
+    padding: 40px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reg_section img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.reg_form {
+    /* width: 300px; */
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.input-container input {
+    width: 250px;
+    padding: 10px 10px 10px 30px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 0.5px solid gray;
+    transition: border-color 0.2s ease;
+}
+
+.input-container input:focus {
+    border-color: maroon;
+    outline: none;
+}
+
+.input-container .fa-user,
+.input-container .fa-lock {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: gray;
+    transition: color 0.2s ease;
+}
+
+.input-container:focus-within .fa-user,
+.input-container:focus-within .fa-lock {
+    color: maroon;
+}
+
+input[type="submit"] {
+    width: 250px;
+    padding: 10px;
+    background-color: maroon;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+input[type="submit"]:hover {
+    background-color: wheat;
+    border: 1px solid maroon;
+    color: black;
+    transition: .2s;
+}
